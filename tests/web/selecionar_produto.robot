@@ -6,12 +6,13 @@ Test Teardown    Close Browser    # No final, fecha o navegador
 *** Variables ***
 ${url}        https://www.saucedemo.com/
 ${browser}    Chrome
+${timeout}    5000ms
 
 *** Test Cases ***
 # frases --> Keywords
 Selecionar o produto Sauce Labs Backpack
     Dado que acesso o site SauceDemo
-    Quando preencho o campo usuario    standard
+    Quando preencho o campo usuario    standard_user
     E preencho o campo senha    secret_sauce
     E clico no botao Login
     Entao sou direcionado para a pagina de produtos
@@ -21,10 +22,17 @@ Selecionar o produto Sauce Labs Backpack
     Entao vizualizo o numero de items no carrinho    1
     Quando clico no icone do carrinho
     Entao sou direcionado para a pagina do carrinho
+    Quando clico no menu burguer
+    E clico em Logout
+    Então sou direcionado para a pagina de login
+    # Wait Until Keyword Succeeds    
+    # ...    Entao sou direcionado para a pagina do produto    
+    # ...    15x    3s    Outra Keyword
+
 
 Selecionar o produto Sauce Labs Backpack Login com Enter
     Dado que acesso o site SauceDemo
-    Quando preencho o campo usuario    standard
+    Quando preencho o campo usuario    standard_user
     E preencho o campo senha    laranja    
     E pressiono a tecla Enter
 
@@ -33,7 +41,7 @@ Dado que acesso o site SauceDemo
     Open Browser                    url=${url}    browser=${browser}
     Maximize Browser Window
     Set Browser Implicit Wait        10000ms
-    Wait Until Element Is Visible    css=.login_logo    5000ms
+    Wait Until Element Is Visible    css=.login_logo    ${timeout}
 
 Quando preencho o campo usuario
     [Arguments]        ${username}
@@ -50,7 +58,9 @@ E pressiono a tecla Enter
     Press Key            css=[data-test="password"]     ENTER
 
 Entao sou direcionado para a pagina de produtos
-    Element Text Should Be    css=.title    Products
+    #Wait Until Element Is Visible    css=.title    ${timeout}
+    #Element Text Should Be    css=.title    Products
+    Wait Until Element Contains    css=.title    Products    ${timeout}
 
 Quando clico no produto  
     [Arguments]          ${product_name}          ${product_price}
@@ -59,9 +69,10 @@ Quando clico no produto
     Click Element         css=img[alt="${test_product_name}"]
 
 Entao sou direcionado para a pagina do produto
-    Element Should Be Visible    name=back-to-products    Back to products
-    Element Should Be Visible    css=div.inventory_details_name.large_size    ${test_product_name}
-    Element Should Be Visible    css=div.inventory_details_price              ${test_product_price}
+    Wait Until Element Is Visible    name=back-to-products    ${timeout}
+    Element Should Be Visible        name=back-to-products    Back to products
+    Element Should Be Visible        css=div.inventory_details_name.large_size    ${test_product_name}
+    Element Should Be Visible        css=div.inventory_details_price              ${test_product_price}
 
 Quando clico em adicionar no carrinho
     Click Element   css=button.btn.btn_primary.btn_small.btn_inventory 
@@ -75,7 +86,14 @@ Quando clico no icone do carrinho
     Click Link    ${test_cart_items}
 
 Entao sou direcionado para a pagina do carrinho
-    Wait Until Element Contains    locacss=.title    Your Cart
+    Wait Until Element Contains    css=.title    Your Cart
     Element Text Should Be    css=div.inventory_item_name      ${test_product_name}
-    Element Text Should Be    css=div.inventory_item-price     ${test_product_price}
+    Element Text Should Be    css=div.inventory_item_price     ${test_product_price}
     Element Text Should Be    css=div.cart_quantity            ${test_cart_items}
+
+Quando clico no menu burguer
+    Click Element    id=react-burger-menu-btn
+E clico em Logout
+    Click Element    link=Logout
+Então sou direcionado para a pagina de login
+    Wait Until Element Is Visible    css=input.submit-button.btn_action    5000ms

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-13T20:30:57.494949" rpa="false" schemaversion="5">
+<suite id="s1" name="Selecionar Produto" source="C:\Iterasys\RobotSauceDemo140\tests\web\selecionar_produto.robot">
+<test id="s1-t1" name="Selecionar o produto Sauce Labs Backpack" line="12">
+<kw name="Dado que acesso o site SauceDemo">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-13T20:30:57.874948" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-13T20:30:57.873949" elapsed="8.009089"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-13T20:31:05.884039" elapsed="0.036000"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-05-13T20:31:05.921037" elapsed="0.002002"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>5000ms</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-13T20:31:05.923039" elapsed="0.031000"/>
+</kw>
+<status status="PASS" start="2024-05-13T20:30:57.872949" elapsed="8.081090"/>
+</kw>
+<kw name="Quando preencho o campo usuario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-13T20:31:05.956039" level="INFO">Typing text 'standard' into text field 'css=[data-test="username"]'.</msg>
+<arg>css=[data-test="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-13T20:31:05.955039" elapsed="0.153002"/>
+</kw>
+<arg>standard</arg>
+<status status="PASS" start="2024-05-13T20:31:05.955039" elapsed="0.153002"/>
+</kw>
+<kw name="E preencho o campo senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-05-13T20:31:06.109039" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2024-05-13T20:31:06.157039" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>css=[data-test="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-13T20:31:06.109039" elapsed="0.116999"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2024-05-13T20:31:06.108041" elapsed="0.117997"/>
+</kw>
+<kw name="E clico no botao Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-13T20:31:06.227039" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-13T20:31:06.227039" elapsed="0.091000"/>
+</kw>
+<status status="PASS" start="2024-05-13T20:31:06.227039" elapsed="0.091000"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina de produtos">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-05-13T20:31:06.319038" level="INFO">Verifying element 'css=.title' contains exact text 'Products'.</msg>
+<msg time="2024-05-13T20:31:16.486703" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-13T20:31:16.486703" level="FAIL">Element with locator 'css=.title' not found.</msg>
+<arg>css=.title</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2024-05-13T20:31:06.319038" elapsed="10.170663">Element with locator 'css=.title' not found.</status>
+</kw>
+<status status="FAIL" start="2024-05-13T20:31:06.319038" elapsed="10.170663">Element with locator 'css=.title' not found.</status>
+</kw>
+<kw name="Quando clico no produto">
+<arg>Sauce Labs Backpack</arg>
+<arg>$29.99</arg>
+<status status="NOT RUN" start="2024-05-13T20:31:16.490701" elapsed="0.000000"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina do produto">
+<status status="NOT RUN" start="2024-05-13T20:31:16.490701" elapsed="0.000000"/>
+</kw>
+<kw name="Quando clico em adicionar no carrinho">
+<status status="NOT RUN" start="2024-05-13T20:31:16.491701" elapsed="0.000000"/>
+</kw>
+<kw name="Entao vizualizo o numero de items no carrinho">
+<arg>1</arg>
+<status status="NOT RUN" start="2024-05-13T20:31:16.491701" elapsed="0.000000"/>
+</kw>
+<kw name="Quando clico no icone do carrinho">
+<status status="NOT RUN" start="2024-05-13T20:31:16.491701" elapsed="0.001001"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina do carrinho">
+<status status="NOT RUN" start="2024-05-13T20:31:16.492702" elapsed="0.000000"/>
+</kw>
+<kw name="Quando clico no menu burguer">
+<status status="NOT RUN" start="2024-05-13T20:31:16.492702" elapsed="0.000000"/>
+</kw>
+<kw name="E clico em Logout">
+<status status="NOT RUN" start="2024-05-13T20:31:16.493701" elapsed="0.000000"/>
+</kw>
+<kw name="Então sou direcionado para a pagina de login">
+<status status="NOT RUN" start="2024-05-13T20:31:16.493701" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-13T20:31:16.493701" elapsed="2.393520"/>
+</kw>
+<status status="FAIL" start="2024-05-13T20:30:57.871950" elapsed="21.016279">Element with locator 'css=.title' not found.</status>
+</test>
+<test id="s1-t2" name="Selecionar o produto Sauce Labs Backpack Login com Enter" line="29">
+<kw name="Dado que acesso o site SauceDemo">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-13T20:31:18.890223" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-13T20:31:18.890223" elapsed="3.357002"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<msg time="2024-05-13T20:31:22.262226" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.201)
+Stacktrace:
+	GetHandleVerifier [0x00007FF63AEF1522+60802]
+	(No symbol) [0x00007FF63AE6AC22]
+	(No symbol) [0x00007FF63AD27CE4]
+	(No symbol) [0x00007FF63ACFDFDF]
+	(No symbol) [0x00007FF63ADA1E57]
+	(No symbol) [0x00007FF63ADB98D1]
+	(No symbol) [0x00007FF63AD9A923]
+	(No symbol) [0x00007FF63AD68FEC]
+	(No symbol) [0x00007FF63AD69C21]
+	GetHandleVerifier [0x00007FF63B1F41BD+3217949]
+	GetHandleVerifier [0x00007FF63B236157+3488183]
+	GetHandleVerifier [0x00007FF63B22F0DF+3459391]
+	GetHandleVerifier [0x00007FF63AFAB8E6+823622]
+	(No symbol) [0x00007FF63AE75FBF]
+	(No symbol) [0x00007FF63AE70EE4]
+	(No symbol) [0x00007FF63AE71072]
+	(No symbol) [0x00007FF63AE618C4]
+	BaseThreadInitThunk [0x00007FFDC4B97344+20]
+	RtlUserThreadStart [0x00007FFDC62A26B1+33]
+</msg>
+<msg time="2024-05-13T20:31:22.324228" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.201)
+Stacktrace:
+	GetHandleVerifier [0x00007FF63AEF1522+60802]
+	(No symbol) [0x00007FF63AE6AC22]
+	(No symbol) [0x00007FF63AD27CE4]
+	(No symbol) [0x00007FF63ACFDFDF]
+	(No symbol) [0x00007FF63ADA1E57]
+	(No symbol) [0x00007FF63ADB98D1]
+	(No symbol) [0x00007FF63AD9A923]
+	(No symbol) [0x00007FF63AD68FEC]
+	(No symbol) [0x00007FF63AD69C21]
+	GetHandleVerifier [0x00007FF63B1F41BD+3217949]
+	GetHandleVerifier [0x00007FF63B236157+3488183]
+	GetHandleVerifier [0x00007FF63B22F0DF+3459391]
+	GetHandleVerifier [0x00007FF63AFAB8E6+823622]
+	(No symbol) [0x00007FF63AE75FBF]
+	(No symbol) [0x00007FF63AE70EE4]
+	(No symbol) [0x00007FF63AE71072]
+	(No symbol) [0x00007FF63AE618C4]
+	BaseThreadInitThunk [0x00007FFDC4B97344+20]
+	RtlUserThreadStart [0x00007FFDC62A26B1+33]
+</msg>
+<doc>Maximizes current browser window.</doc>
+<status status="FAIL" start="2024-05-13T20:31:22.247225" elapsed="0.306997">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.201)
+Stacktrace:
+	GetHandleVerifier [0x00007FF63AEF1522+60802]
+	(No symbol) [0x00007FF63AE6AC22]
+	(No symbol) [0x00007FF63AD27CE4]
+	(No symbol) [0x00007FF63ACFDFDF]
+	(No symbol) [0x00007FF63ADA1E57]
+	(No symbol) [0x00007FF63ADB98D1]
+	(No symbol) [0x00007FF63AD9A923]
+	(No symbol) [0x00007FF63AD68FEC]
+	(No symbol) [0x00007FF63AD69C21]
+	GetHandleVerifier [0x00007FF63B1F41BD+3217949]
+	GetHandleVerifier [0x00007FF63B236157+3488183]
+	GetHandleVerifier [0x00007FF63B22F0DF+3459391]
+	GetHandleVerifier [0x00007FF63AFAB8E6+823622]
+	(No symbol) [0x00007FF63AE75FBF]
+	(No symbol) [0x00007FF63AE70EE4]
+	(No symbol) [0x00007FF63AE71072]
+	(No symbol) [0x00007FF63AE618C4]
+	BaseThreadInitThunk [0x00007FFDC4B97344+20]
+	RtlUserThreadStart [0x00007FFDC62A26B1+33]
+</status>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" start="2024-05-13T20:31:22.554222" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>5000ms</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-05-13T20:31:22.554222" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-13T20:31:18.890223" elapsed="3.664999">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.201)
+Stacktrace:
+	GetHandleVerifier [0x00007FF63AEF1522+60802]
+	(No symbol) [0x00007FF63AE6AC22]
+	(No symbol) [0x00007FF63AD27CE4]
+	(No symbol) [0x00007FF63ACFDFDF]
+	(No symbol) [0x00007FF63ADA1E57]
+	(No symbol) [0x00007FF63ADB98D1]
+	(No symbol) [0x00007FF63AD9A923]
+	(No symbol) [0x00007FF63AD68FEC]
+	(No symbol) [0x00007FF63AD69C21]
+	GetHandleVerifier [0x00007FF63B1F41BD+3217949]
+	GetHandleVerifier [0x00007FF63B236157+3488183]
+	GetHandleVerifier [0x00007FF63B22F0DF+3459391]
+	GetHandleVerifier [0x00007FF63AFAB8E6+823622]
+	(No symbol) [0x00007FF63AE75FBF]
+	(No symbol) [0x00007FF63AE70EE4]
+	(No symbol) [0x00007FF63AE71072]
+	(No symbol) [0x00007FF63AE618C4]
+	BaseThreadInitThunk [0x00007FFDC4B97344+20]
+	RtlUserThreadStart [0x00007FFDC62A26B1+33]
+</status>
+</kw>
+<kw name="Quando preencho o campo usuario">
+<arg>standard</arg>
+<status status="NOT RUN" start="2024-05-13T20:31:22.555222" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo senha">
+<arg>laranja</arg>
+<status status="NOT RUN" start="2024-05-13T20:31:22.556223" elapsed="0.000000"/>
+</kw>
+<kw name="E pressiono a tecla Enter">
+<status status="NOT RUN" start="2024-05-13T20:31:22.556223" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-13T20:31:22.557223" elapsed="2.303026"/>
+</kw>
+<status status="FAIL" start="2024-05-13T20:31:18.889223" elapsed="5.971026">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.201)
+Stacktrace:
+	GetHandleVerifier [0x00007FF63AEF1522+60802]
+	(No symbol) [0x00007FF63AE6AC22]
+	(No symbol) [0x00007FF63AD27CE4]
+	(No symbol) [0x00007FF63ACFDFDF]
+	(No symbol) [0x00007FF63ADA1E57]
+	(No symbol) [0x00007FF63ADB98D1]
+	(No symbol) [0x00007FF63AD9A923]
+	(No symbol) [0x00007FF63AD68FEC]
+	(No symbol) [0x00007FF63AD69C21]
+	GetHandleVerifier [0x00007FF63B1F41BD+3217949]
+	GetHandleVerifier [0x00007FF63B236157+3488183]
+	GetHandleVerifier [0x00007FF63B22F0DF+3459391]
+	GetHandleVerifier [0x00007FF63AFAB8E6+823622]
+	(No symbol) [0x00007FF63AE75FBF]
+	(No symbol) [0x00007FF63AE70EE4]
+	(No symbol) [0x00007FF63AE71072]
+	(No symbol) [0x00007FF63AE618C4]
+	BaseThreadInitThunk [0x00007FFDC4B97344+20]
+	RtlUserThreadStart [0x00007FFDC62A26B1+33]
+</status>
+</test>
+<status status="FAIL" start="2024-05-13T20:30:57.497950" elapsed="27.366299"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Selecionar Produto">Selecionar Produto</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-13T20:31:22.262226" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.201)
+Stacktrace:
+	GetHandleVerifier [0x00007FF63AEF1522+60802]
+	(No symbol) [0x00007FF63AE6AC22]
+	(No symbol) [0x00007FF63AD27CE4]
+	(No symbol) [0x00007FF63ACFDFDF]
+	(No symbol) [0x00007FF63ADA1E57]
+	(No symbol) [0x00007FF63ADB98D1]
+	(No symbol) [0x00007FF63AD9A923]
+	(No symbol) [0x00007FF63AD68FEC]
+	(No symbol) [0x00007FF63AD69C21]
+	GetHandleVerifier [0x00007FF63B1F41BD+3217949]
+	GetHandleVerifier [0x00007FF63B236157+3488183]
+	GetHandleVerifier [0x00007FF63B22F0DF+3459391]
+	GetHandleVerifier [0x00007FF63AFAB8E6+823622]
+	(No symbol) [0x00007FF63AE75FBF]
+	(No symbol) [0x00007FF63AE70EE4]
+	(No symbol) [0x00007FF63AE71072]
+	(No symbol) [0x00007FF63AE618C4]
+	BaseThreadInitThunk [0x00007FFDC4B97344+20]
+	RtlUserThreadStart [0x00007FFDC62A26B1+33]
+</msg>
+</errors>
+</robot>
